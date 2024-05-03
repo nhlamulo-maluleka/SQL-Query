@@ -18,7 +18,7 @@ public class Table implements IQueries {
     // [2]: StudentTable
     // [3]: (firstName,lastName,dateOfBirthString,grade,isNewStudent)
     // [4]: VALUES
-    // [5]: (Nhlamulo,Maluleka,1997-01-03,12,false)
+    // [5]: (Nhlamulo,Maluleka,1987-01-03,12,false)
 
     @Override
     public Response insert(String query) throws Exception {
@@ -77,10 +77,11 @@ public class Table implements IQueries {
         Map<String, String> fieldValMap = new HashMap<String, String>();
 
         String[] fields = Utils.getSplitQuery(Utils.removeBrackets(splitQuery[fieldIndex]), ",");
-        String[] fieldValues = Utils.getSplitQuery(Utils.removeBrackets(splitQuery[valueIndex]), ",");
+        String[] fieldValues = null/* IMPLEMENT CORRECT ASSIGNMENT */;
 
         for (int ind = 0; ind < fields.length; ind++) {
-            fieldValMap.put(fields[ind], fieldValues[ind]);
+            // UNCOMMENT THIS LINE AFTER PROVIDING CORRECT IMPLEMENTATION
+            // fieldValMap.put(fields[ind], fieldValues[ind]);
         }
 
         return fieldValMap;
