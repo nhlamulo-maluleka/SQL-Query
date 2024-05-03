@@ -12,16 +12,16 @@ import Utils.Utils;
 public class Table implements IQueries {
     // Store 10 students
     StudentTable[] studentTable = new StudentTable[10];
+    
+    // [0]: INSERT
+    // [1]: INTO
+    // [2]: StudentTable
+    // [3]: (firstName,lastName,dateOfBirthString,grade,isNewStudent)
+    // [4]: VALUES
+    // [5]: (Nhlamulo,Maluleka,1997-01-03,12,false)
 
     @Override
     public Response insert(String query) throws Exception {
-        // [0]: INSERT
-        // [1]: INTO
-        // [2]: StudentTable
-        // [3]: (firstName,lastName,dateOfBirthString,grade,isNewStudent)
-        // [4]: VALUES
-        // [5]: (Nhlamulo,Maluleka,1997-01-03,12,false)
-
         Map<String, String> mapped = mapFieldValues(Utils.getSplitQuery(query, " "), 3, 5);
         validateFields(mapped.keySet());
 
@@ -36,6 +36,7 @@ public class Table implements IQueries {
     @Override
     public Response select(String query) throws Exception {
         // COMPLETE THE IMPLEMENTATION OF THIS METHOD
+        // 
         String queryResponse = "";
         for (int i = 0; i < studentTable.length; i++) {
             if (studentTable[i] == null)

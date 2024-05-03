@@ -8,8 +8,7 @@ public class StudentTable {
     public int grade; // Grades are between [1 - 12]
     public Boolean isNewStudent;
 
-    public StudentTable() {
-    }
+    public StudentTable() {}
 
     public StudentTable(String firstName, String lastName, String dateOfBirthString, int grade,
             Boolean isNewStudent) {

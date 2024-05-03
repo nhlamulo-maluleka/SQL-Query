@@ -17,9 +17,9 @@ public class Main {
     public static void main(String[] args) throws Exception {
         Table tbl = new Table();
         System.out.println(tbl.insert(
-                "INSERT INTO StudentTable (firstName,lastName,dateOfBirthString,grade,isNewStudent) VALUES (Nhlamulo,Maluleka,1997-01-03,12,false)"));
+                "INSERT INTO StudentTable (firstName,lastName,dateOfBirthString,grade,isNewStudent) VALUES (Nhlamulo,Maluleka,1987-01-03,12,false)"));
         System.out.println(tbl.insert(
-                "INSERT INTO StudentTable (firstName,lastName,dateOfBirthString,grade,isNewStudent) VALUES (Silas,Maluks,1997-01-03,12,true)"));
+                "INSERT INTO StudentTable (firstName,lastName,dateOfBirthString,grade,isNewStudent) VALUES (Silas,Maluks,1987-01-03,12,true)"));
         System.out.println(tbl.select("SELECT firstName,lastName FROM StudentTable WHERE id=2"));
     }
 }
