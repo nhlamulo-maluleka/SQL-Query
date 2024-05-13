@@ -20,6 +20,8 @@ public class Main {
                 "INSERT INTO StudentTable (firstName,lastName,dateOfBirthString,grade,isNewStudent) VALUES (Nhlamulo,Maluleka,1987-01-03,12,false)"));
         System.out.println(tbl.insert(
                 "INSERT INTO StudentTable (firstName,lastName,dateOfBirthString,grade,isNewStudent) VALUES (Silas,Maluks,1987-01-03,12,true)"));
-        System.out.println(tbl.select("SELECT firstName,lastName FROM StudentTable WHERE id=2"));
+        System.out.println(tbl.select("SELECT firstName,lastName FROM StudentTable"));
+        // System.out.println(tbl.update("UPDATE StudentTable SET firstName=newName WHERE id=4"));
+        // System.out.println(tbl.delete("DELETE FROM StudentTable WHERE id=2"));
     }
 }
