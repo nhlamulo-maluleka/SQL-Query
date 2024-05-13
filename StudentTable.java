@@ -23,6 +23,8 @@ public class StudentTable {
 
     public Object get(String field) {
         switch (field) {
+            case "id":
+                return this.id;
             case "firstName":
                 return this.firstName;
             case "lastName":

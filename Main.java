@@ -22,7 +22,7 @@ public class Main {
                 "INSERT INTO StudentTable (firstName,lastName,dateOfBirthString,grade,isNewStudent) VALUES (Silas,Maluks,1987-01-03,12,true)"));
         System.out.println(tbl.select("SELECT firstName,lastName FROM StudentTable"));
         System.out.println(tbl.update("UPDATE StudentTable SET firstName=newName,lastName=newLast WHERE id=1"));
-        System.out.println(tbl.select("SELECT firstName,lastName FROM StudentTable"));
+        System.out.println(tbl.select("SELECT id,firstName,isNewStudent FROM StudentTable"));
         // System.out.println(tbl.delete("DELETE FROM StudentTable WHERE id=2"));
     }
 }
