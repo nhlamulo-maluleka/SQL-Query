@@ -13,7 +13,7 @@ public class StudentTable {
 
     public StudentTable(String firstName, String lastName, String dateOfBirthString, int grade,
             Boolean isNewStudent) {
-        this.id = ++Utils.COUNTER;
+        this.id = Utils.COUNTER++;
         this.firstName = firstName;
         this.lastName = lastName;
         this.dateOfBirthString = dateOfBirthString;
