@@ -68,7 +68,34 @@ public class Table implements IQueries {
     @Override
     public Response update(String query) throws Exception {
         // IMPLEMENT THIS METHOD
-        return null;
+        String[] keys = Utils.getSplitQuery(query, " ");
+        String[] fieldValues = Utils.getSplitQuery(keys[3], ",");
+        String[] whereFValues = Utils.getSplitQuery(keys[5], ",");
+        Map<String, String> fvMap = new HashMap<>();
+        Map<String, String> whereMap = new HashMap<>();
+
+        for (String fv : fieldValues) {
+            String[] fieldValue = Utils.getSplitQuery(fv.trim(), "=");
+            fvMap.put(fieldValue[0], fieldValue[1]);
+        }
+
+        for (String fv : whereFValues) {
+            String[] whereFV = Utils.getSplitQuery(fv.trim(), "=");
+            whereMap.put(whereFV[0], whereFV[1]);
+        }
+
+        for (StudentTable tbl : studentTable) {
+            if (tbl == null)
+                continue;
+
+            if (whereMap.get("id").compareTo(String.valueOf(tbl.id)) == 0) {
+                for (String fieldq : fvMap.keySet()) {
+                    tbl.set(fieldq, fvMap.get(fieldq));
+                }
+            }
+        }
+
+        return new Response("Update query successful");
     }
 
     @Override

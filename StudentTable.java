@@ -38,6 +38,26 @@ public class StudentTable {
         }
     }
 
+    public void set(String field, String value) {
+        switch (field) {
+            case "firstName":
+                this.firstName = value;
+                break;
+            case "lastName":
+                this.lastName = value;
+                break;
+            case "dateOfBirthString":
+                this.dateOfBirthString = value;
+                break;
+            case "grade":
+                this.grade = Integer.valueOf(value);
+                break;
+            case "isNewStudent":
+                this.isNewStudent = Boolean.valueOf(value);
+                break;
+        }
+    }
+
     @Override
     public String toString() {
         return "[" + id + "], " + firstName + ", " + lastName + ", " + dateOfBirthString + ", " + grade + ", "
